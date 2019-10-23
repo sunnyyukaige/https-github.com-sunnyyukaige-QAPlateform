@@ -1,0 +1,14 @@
+h1
+{
+    font-family: "Times New Roman";
+    font-size: 20px;
+}
+button
+{
+    border-style: double;
+    color: blueviolet;
+}
+body
+{
+    text-align: center;
+}

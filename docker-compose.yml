@@ -1,0 +1,28 @@
+version: '3'
+services:
+  db:
+    image: mysql
+    environment:
+      - MYSQL_DATABASE=autoplatform
+      - MYSQL_ROOT_PASSWORD=Kaige@8531917
+    volumes:
+      - ./mysql:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    restart: always
+    container_name: db
+
+  web:
+    build: .
+    ports: 
+      - "8000:8001"
+    volumes: 
+      - ./automationPlatformsunny:/automationPlatformsunny 
+      # - /tmp/logs:/tmp
+    command: bash start.sh
+    depends_on: 
+      - db
+    restart: always
+    container_name: web
+    links: 
+      - db

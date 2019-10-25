@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from UIautomation import views
+from product import previews
 
 
 urlpatterns = [
@@ -24,4 +25,5 @@ urlpatterns = [
     path('login/',views.login),
     path('home/',views.home),
     path('logout/',views.logout),
+    path('product_manage/',previews.product_manage),
 ]
